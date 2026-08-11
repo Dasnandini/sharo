@@ -25,19 +25,19 @@ export default function RootLayout({ children }) {
 
             {/* Right Navigation */}
             <nav className="flex items-center gap-8 text-sm font-medium text-slate-600">
-              <Link href="#" className="hover:text-orange-600 transition-colors">
+              <Link href="/how-it-works" className="hover:text-orange-600 transition-colors">
                 How it works
               </Link>
-              <Link href="#" className="hover:text-orange-600 transition-colors">
+              <Link href="/about" className="hover:text-orange-600 transition-colors">
                 About
               </Link>
-              <button 
+              {/* <button 
                 type="button" 
                 className="px-4 py-2 rounded-xl border border-orange-200 text-orange-600 font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center gap-2"
               >
                 <User className="w-4 h-4" />
                 <span>Sign in</span>
-              </button>
+              </button> */}
             </nav>
           </div>
         </header>
