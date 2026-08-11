@@ -1,0 +1,27 @@
+// Prisma Schema for Sharo Temporary File Sharing (MongoDB Atlas)
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model FileShare {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  shareId      String   @unique
+
+  originalName String
+  blobUrl      String
+
+  mimeType     String?
+  size         Int
+
+  downloadCount Int     @default(0)
+
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+
+  status       String   @default("ACTIVE") // ACTIVE, EXPIRED, DELETED
+}

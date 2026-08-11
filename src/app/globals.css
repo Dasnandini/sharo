@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffdfa;
+  --foreground: #0f172a;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Concentric radial rings background effect with warm orange tint */
+.radial-rings-bg {
+  background-color: #fffdfa;
+  background-image: 
+    radial-gradient(circle at 50% 45%, transparent 0%, transparent 15%, rgba(249, 115, 22, 0.04) 15.5%, transparent 16%),
+    radial-gradient(circle at 50% 45%, transparent 0%, transparent 30%, rgba(249, 115, 22, 0.04) 30.5%, transparent 31%),
+    radial-gradient(circle at 50% 45%, transparent 0%, transparent 45%, rgba(249, 115, 22, 0.035) 45.5%, transparent 46%),
+    radial-gradient(circle at 50% 45%, transparent 0%, transparent 60%, rgba(249, 115, 22, 0.025) 60.5%, transparent 61%),
+    radial-gradient(circle at 50% 45%, transparent 0%, transparent 75%, rgba(249, 115, 22, 0.015) 75.5%, transparent 76%);
+}
+
+/* Custom crisp card shadows with subtle orange glow */
+.card-shadow {
+  box-shadow: 0 20px 50px -10px rgba(249, 115, 22, 0.08), 0 10px 20px -5px rgba(0, 0, 0, 0.03);
+}
+
+.card-shadow-hover {
+  transition: all 0.3s ease;
+}
+
+.card-shadow-hover:hover {
+  box-shadow: 0 25px 60px -12px rgba(249, 115, 22, 0.14), 0 12px 25px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
